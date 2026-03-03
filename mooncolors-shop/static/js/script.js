@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function cargarProductos() {
     try {
         // Hacemos la llamada a tu API local
-        const respuesta = await fetch('http://127.0.0.1:5000/api/articulos');
+        const respuesta = await fetch('https://mooncolors-shop.onrender.com/api/articulos');
         const articulos = await respuesta.json();
 
         // Buscamos el contenedor en el HTML
@@ -34,7 +34,7 @@ async function cargarProductos() {
 
 async function cargarPortada() {
     try{
-        const respuesta = await fetch('http://127.0.0.1:5000/api/portada')
+        const respuesta = await fetch('https://mooncolors-shop.onrender.com/api/portada')
         const datos = await respuesta.json()
 
         const contenedor_imagen = document.getElementById('contenedor-imagen-portada')
