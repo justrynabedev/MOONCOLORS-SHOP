@@ -1,0 +1,209 @@
+@font-face {
+    font-family: "Chocoladine";
+    src: url("chocoladine/ChocoladineDemo.ttf");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    margin: 5px;
+    background: linear-gradient(135deg, #154b62, #186c57, #469a5a);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 70px 87dvh;
+    gap:10px;
+}
+
+header{
+    border-radius: 35px;
+    background-color: rgb(255, 255, 255, 0.800);
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header h1{
+    font-family: "Chocoladine";
+    padding: 10px;
+    padding-top: 5px;
+    margin-left: -150px;
+    font-size: 63px;
+    background: linear-gradient(135deg, #154b62, #186c57, #469a5a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transition: transform ease 0.2s;
+}
+
+header h1:hover{
+    transform: scale(1.02);
+}
+
+header nav{
+    color: #4e3838;
+    margin-right: -25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header nav a{
+    font-size: 25px;
+    font-weight: 500;
+    padding: 0 30px;
+    background: linear-gradient(135deg, #154b62, #186c57, #469a5a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+aside{
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255, 0.800);
+    grid-row: 2;
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+aside a{
+    margin-left: 10px;
+    font-size: 18px;
+    padding: 15px 0;
+    font-weight: 500;
+    background: linear-gradient(135deg, #154b62, #186c57, #469a5a);
+    background: linear-gradient(135deg, #9c3838, #946b43, #949c4a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+main{
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.800);
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+
+
+.difuminado-blanco-top{
+    width: 100%;
+    min-height: 30px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+}
+
+.difuminado-blanco-bottom{
+    width: 100%;
+    min-height: 50px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+}
+
+#contenedor-imagen-portada{
+    min-height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flotante{
+    width: 80%;
+    min-height: 50px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.836);
+    box-shadow: 0 0 8px rgba(23, 23, 23, 0.796);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 130px;
+    z-index: 10;
+}
+
+.flotante input{
+    padding-left: 25px;
+    margin-left: 15px;
+    height: 40px;
+    width: 60%;
+    background-color:rgba(255, 255, 255, 0.863);
+    font-size: 14px;
+    color: rgb(48, 48, 48);
+    border-radius: 20px;
+    border: none;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+    transition: box-shadow ease 0.3s;
+}
+
+.flotante input::placeholder{
+    position: relative;
+    left: 25px;
+}
+
+.flotante input:focus{
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.305);
+    border: none;
+    outline: none;
+}
+
+/* Contenedor principal de la tienda */
+.grid-tienda {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 230px);
+    grid-template-rows: repeat(auto-fit, min(350px)) ;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Estilo de la tarjeta de cada producto */
+.producto-card {
+    width: 230px;
+    height: 340px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.595);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover{
+    transform: scale(1.02) translateY(-5px);
+}
+
+
+/* La imagen de tu print (AWS S3) */
+.producto-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.precio-tag {
+    color: #d9534f;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

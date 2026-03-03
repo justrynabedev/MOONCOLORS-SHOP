@@ -1,2 +1,0 @@
-- En el portatil de clase usar ```python3```
-  - Es posible que haya que instalar flask
