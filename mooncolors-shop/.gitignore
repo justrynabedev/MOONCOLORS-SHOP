@@ -1,2 +1,4 @@
 MOONCOLORS_SHOP
 .env
+.vscode
+__pycache__
